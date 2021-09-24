@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/pasta/css/all.css">
+    <script src="https://kit.fontawesome.com/04a027ab0c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+
+    <div class="fundo">
+
+        <h1 id="titulo">
+            
+            <a href="https://twitter.com/muellerviana" id="tt" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instgram.com/muellerviana" id="ig" target="_blank"> <i class="fab fa-instagram"></i></a>
+            
+            <p id="nome">muellerviana</p>
+        
+        
+        </h1>
+
+        <div class="calculadora">
+
+
+                <h1>Calculadora</h1>
+                <p id="result"> </p>
+
+                <table>
+                    <tr>
+                        <td><button class="botao" id="clear" onclick="limpar()">AC</button></td>
+                        <td><button class="botao"  onclick="apagar()"><i class="fas fa-backspace"></i></button></td>
+                        <td><button class="botao" onclick="insert('/')"><i class="fas fa-divide"></i></button></td>
+                        <td><button class="botao" onclick="insert('*')"><i class="fas fa-times"></i></button></td>
+
+                    </tr>
+                    <tr>
+                        <td><button class="botao" onclick="insert(7)"> 7</button></td>
+                        <td><button class="botao" onclick="insert(8)">8</button></td>
+                        <td><button class="botao" onclick="insert(9)">9</button></td>
+                        <td><button class="botao" onclick="insert('-')"><i class="fas fa-minus"></i></button></td>
+
+                    </tr>
+                    <tr>
+                        <td><button class="botao" onclick="insert(4)">4</button></td>
+                        <td><button class="botao" onclick="insert(5)">5</button></td>
+                        <td><button class="botao" onclick="insert(6)">6</button></td>
+                        <td><button class="botao" onclick="insert('+')"><i class="fas fa-plus"></i></button></td>
+
+                        
+
+                    </tr>
+
+                    <tr>
+                        <td><button class="botao" onclick="insert(1)">1</button></td>
+                        <td><button class="botao" onclick="insert(2)">2</button></td>
+                        <td><button class="botao" onclick="insert(3)">3</button></td>
+                        <td rowspan="2"><button class="botao" id="row-boton" onclick="calcular()"><i class="fas fa-equals"></i></button></td>
+                     
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button class="botao" id="col-boton" onclick="insert(0)">0</button></td>
+                        <td><button class="botao" id="dot" onclick="insert('.')"><i class="fas fa-circle"></i></button></td>
+                        
+                        
+
+                        
+
+                    </tr>
+
+                </table>
+
+
+        </div>
+        
+    </div>
+    <script>
+
+        function insert(num){
+            var numero = document.getElementById('result').innerHTML; 
+            document.getElementById('result').innerHTML = numero + num;       
+        }
+
+        function limpar(){
+
+            document.getElementById('result').innerHTML = "";
+
+        }
+
+        function apagar(){
+            var resultado = document.getElementById('result').innerHTML;
+            document.getElementById('result').innerHTML = resultado.substring(0, resultado.length -1);
+        }
+
+        function calcular(){
+            var resultado = document.getElementById('result').innerHTML
+            
+            if(resultado){
+                document.getElementById('result').innerHTML = eval(resultado)
+
+            }
+        }
+
+    </script>
+
+</body>
+</html>
